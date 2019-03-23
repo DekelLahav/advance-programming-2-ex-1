@@ -33,15 +33,18 @@ namespace Excercise_1
                 }
                 //in case the key doesn't exist
                 this.functionContainer.Add(funcName, num => num);
+                allFuncsAvailable.Add(funcName);
                 return num => num;
             }
 
             set
             {
+                //in case the key exist
                 if(this.functionContainer.ContainsKey(funcName))
                 {
                     functionContainer[funcName] = value;
                 }
+                //in case the key doesn't exist
                 else
                 {
                     functionContainer.Add(funcName, value);

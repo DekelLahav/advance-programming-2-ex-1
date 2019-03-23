@@ -21,6 +21,7 @@ namespace Excercise_1
             this.m_name = name;
         }
 
+        //implement the interface
         string IMission.Name {
             get { return m_name; }
         }
@@ -33,6 +34,7 @@ namespace Excercise_1
         //an Event of when a mission is activated
         public event EventHandler<double> OnCalculate;
 
+        //calculate the result of the mission
         public double Calculate(double value)
         {
             double result =  this.m_function(value);

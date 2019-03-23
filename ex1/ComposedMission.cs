@@ -21,6 +21,7 @@ namespace Excercise_1
             this.m_funcList = new List<func>();
         }
 
+        //implement the interface
         string IMission.Name
         {
             get { return m_name; }
@@ -40,13 +41,14 @@ namespace Excercise_1
             return this;
         }
 
+        //calculate the result of the mission
         public double Calculate(double value)
         {
-            double result = 0;
+            double result = value;
             int funcListLength = this.m_funcList.Count;
             for(int i = 0; i < funcListLength; i++)
             {
-                result += this.m_funcList[i](result);
+                result = this.m_funcList[i](result);
             }
             OnCalculate?.Invoke(this, result);
             return result;
